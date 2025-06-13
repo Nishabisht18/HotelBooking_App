@@ -12,7 +12,7 @@ import Dashboard from './components/Pages/HotelOwner/Dashboard';
 import AddRoom from './components/Pages/HotelOwner/AddRoom';
 import ListRoom from './components/Pages/HotelOwner/ListRoom';
 
-const App = () => {
+const AppContent = () => {
     const isOwnerPath=useLocation().pathname.includes("owner");
   return (
     <div>
@@ -20,7 +20,7 @@ const App = () => {
         
         {false && <HotelReg/>}
         <div className='min-h-[70vh]'>
-          <HashRouter>
+          
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/rooms' element={<AllRooms/>}/>
@@ -32,11 +32,17 @@ const App = () => {
               <Route path='add-room' element={<AddRoom/>}/>              
             </Route>
           </Routes>
-          </HashRouter>
         </div>
         <Footer/>
     </div>
   )
 }
+const App = () => {
+  return (
+    <HashRouter>
+      <AppContent />
+    </HashRouter>
+  );
+};
 
 export default App
