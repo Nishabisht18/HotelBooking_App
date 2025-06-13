@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Home from './components/Pages/Home';
 import Footer from './components/Footer';
 import AllRooms from './components/Pages/AllRooms';
@@ -20,6 +20,7 @@ const App = () => {
         
         {false && <HotelReg/>}
         <div className='min-h-[70vh]'>
+          <HashRouter>
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/rooms' element={<AllRooms/>}/>
@@ -31,6 +32,7 @@ const App = () => {
               <Route path='add-room' element={<AddRoom/>}/>              
             </Route>
           </Routes>
+          </HashRouter>
         </div>
         <Footer/>
     </div>
