@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
+import {Route, Routes, useLocation } from 'react-router-dom'
 import Home from './components/Pages/Home';
 import Footer from './components/Footer';
 import AllRooms from './components/Pages/AllRooms';
@@ -12,7 +12,7 @@ import Dashboard from './components/Pages/HotelOwner/Dashboard';
 import AddRoom from './components/Pages/HotelOwner/AddRoom';
 import ListRoom from './components/Pages/HotelOwner/ListRoom';
 
-const AppContent = () => {
+const App = () => {
     const isOwnerPath=useLocation().pathname.includes("owner");
   return (
     <div>
@@ -37,12 +37,5 @@ const AppContent = () => {
     </div>
   )
 }
-const App = () => {
-  return (
-    <HashRouter>
-      <AppContent />
-    </HashRouter>
-  );
-};
 
 export default App
